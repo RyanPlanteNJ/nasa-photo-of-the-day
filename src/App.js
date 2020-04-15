@@ -1,11 +1,14 @@
-import React from "react";
+import React from 'react';
 import "./App.css";
-import NasaGrid from "./components/NasaGrid"
+import NasaHeader from './components/NasaHeader/NasaHeader'
+import NasaContainer from './components/NasaContainer/NasaContainer'
+
 
 function App() {
   return (
     <div className="App">
-      <NasaGrid />
+      <NasaHeader />
+      <NasaContainer />
       {/* <p>
         Read through the instructions in the README.md file to build your NASA
         app! Have fun 🚀!
