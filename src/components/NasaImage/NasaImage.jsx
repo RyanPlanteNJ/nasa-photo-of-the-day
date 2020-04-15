@@ -1,22 +1,19 @@
-import React, { useState, useEffect } from 'react';
-import axios from 'axios';
+import React from 'react';
+import styled from 'styled-components';
 
-export default function NasaGrid(){
-    const [nasaData, setNasaData] = useState([]);
+const ImageContainer = styled.div`
+    width: 100%;    
+`;
 
-    useEffect(() => {
-        axios
-            .get("https://api.nasa.gov/planetary/apod?api_key=FhTSqyczwbm7Mscx4U6PJLD00cxsZ9ItIPow4p2v")
-            .then(response => {
-                console.log(response);
-                // setNasaData(response.data);
-            })
-            .catch(error => console.log("Error",error));
-    },[]);
+const ImageSize = styled.img`
+    width: 100%;
+`;
 
+export default function NasaImage(props) {
+    const { image } = props;
     return (
-        <div>
-            <p>blah blah</p>
-        </div>
-    )
+        <ImageContainer>
+            <ImageSize src={image.url} alt={image.desc} />
+        </ImageContainer>
+    );
 }
