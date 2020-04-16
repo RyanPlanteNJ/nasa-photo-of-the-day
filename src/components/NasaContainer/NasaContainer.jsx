@@ -12,7 +12,7 @@ export default function NasaContainer() {
         axios
             .get('https://api.nasa.gov/planetary/apod?api_key=FhTSqyczwbm7Mscx4U6PJLD00cxsZ9ItIPow4p2v')
             .then(response => {
-                console.log(response.data);
+                // console.log(response.data);
                 setNasaData(response.data);
             });
         
